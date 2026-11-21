@@ -1,0 +1,304 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f7f4;
+    color: #26382d;
+}
+
+/* LOGIN */
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #073e2c, #16834f);
+}
+
+.login-box {
+    background: white;
+    width: 360px;
+    max-width: 100%;
+    padding: 32px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 15px 40px #0003;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 15px;
+    border-radius: 16px;
+    background: #e8f4ec;
+    color: #16834f;
+    display: grid;
+    place-items: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.login-box h1 {
+    color: #126b43;
+    margin-bottom: 8px;
+}
+
+.login-box p {
+    color: #777;
+    margin-bottom: 18px;
+}
+
+/* INPUTS & BUTTONS */
+input, select, button {
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 8px;
+}
+
+input, select {
+    border: 1px solid #dce5de;
+    background: white;
+    outline: none;
+}
+
+input:focus, select:focus {
+    border-color: #16834f;
+}
+
+button {
+    background: #16834f;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.login-box input, .login-box button {
+    width: 100%;
+    margin: 7px 0;
+}
+
+.guest-btn {
+    background: #e98539;
+}
+
+/* LAYOUT */
+.main-app {
+    display: none;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 230px;
+    background: #073f2d;
+    color: white;
+    padding: 24px 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar h2 {
+    font-size: 25px;
+}
+
+.tagline {
+    color: #b7d9c5;
+    margin: 5px 0;
+}
+
+.team-name {
+    color: #ffb347;
+    font-size: 12px;
+    margin-bottom: 22px;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.sidebar nav button {
+    text-align: left;
+    background: transparent;
+    color: #e6f2e9;
+}
+
+.sidebar nav button:hover,
+.sidebar nav button.active {
+    background: #16834f;
+}
+
+.logout-btn {
+    background: #e98539;
+    margin-top: auto;
+}
+
+/* CONTENT */
+.content {
+    flex: 1;
+    min-width: 0;
+    padding: 25px;
+}
+
+.topbar, .card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 18px;
+    box-shadow: 0 3px 12px #163b2410;
+}
+
+.topbar {
+    border-left: 5px solid #e98539;
+}
+
+.topbar h1 {
+    color: #126b43;
+    margin-bottom: 8px;
+}
+
+.topbar p {
+    color: #78847b;
+}
+
+/* PAGES */
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+/* DASHBOARD */
+.summary-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.stat-card {
+    border-top: 4px solid #16834f;
+}
+
+.stat-card h3 {
+    font-size: 14px;
+    color: #6e7d72;
+}
+
+.stat-card p {
+    color: #16834f;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.progress-card h2, .status-card h2 {
+    color: #126b43;
+    margin-bottom: 12px;
+}
+
+#progressText {
+    color: #e98539;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.progress-bar {
+    height: 15px;
+    background: #e7eee9;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+#progressFill {
+    height: 100%;
+    width: 0%;
+    background: #16834f;
+    border-radius: 20px;
+    transition: width 0.4s;
+}
+
+#supplyOverview {
+    color: #16834f;
+    font-weight: bold;
+}
+
+/* FORMS */
+form.card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+form.card input, form.card select {
+    flex: 1;
+    min-width: 130px;
+}
+
+form.card button {
+    background: #16834f;
+}
+
+/* TABLES */
+.table-card {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    min-width: 450px;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 13px;
+    text-align: left;
+    border-bottom: 1px solid #edf1ee;
+}
+
+th {
+    background: #edf6ef;
+    color: #0b6842;
+}
+
+/* MOBILE */
+@media (max-width: 750px) {
+    .main-app {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .sidebar nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .sidebar nav button {
+        flex: 1 1 140px;
+    }
+
+    .logout-btn {
+        margin-top: 15px;
+    }
+
+    .content {
+        padding: 12px;
+    }
+
+    .summary-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
